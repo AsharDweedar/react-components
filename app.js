@@ -20,12 +20,17 @@ var GroceryListItem = () => (
   </div>
 );
 
-var GroceryList = (props) => (
-  <ul>
-    <li>{props.items[0]}</li>
-    <li>{props.items[1]}</li>
-  </ul>
-);
+var GroceryList = (props) => {
+	var onListItemClick = (event) => {
+	    console.log(event.target.innerHTML);
+	 };
+	return (
+		<ul>
+		  <li onClick={onListItemClick}>{props.items[0]}</li>
+		  <li onClick={onListItemClick}>{props.items[1]}</li>
+		</ul>
+	);
+}
 
 
 ReactDOM.render(<GroceryListItem />, document.getElementById("epp"));
